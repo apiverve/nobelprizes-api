@@ -1,0 +1,109 @@
+openapi: 3.0.4
+info:
+  title: Nobel Prizes
+  description: Nobel Prizes is a simple tool for getting information on Nobel Prizes. It returns information on various Nobel Prizes.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/nobelprizes:
+    get:
+      summary: Get Nobel Prize Information
+      description: Nobel Prizes is a simple tool for getting information on Nobel Prizes. It returns information on various Nobel Prizes.
+      operationId: nobelprizes
+      parameters:
+      - name: firstname
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The first name of the Nobel Prize winner to get information about
+        example: Albert
+      - name: lastname
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The last name of the Nobel Prize winner to get information about
+        example: Einstein
+      - name: category
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The category of the Nobel Prize to get information about (e.g., Physics, Chemistry, Medicine, Peace, etc)
+        example: Physics
+      - name: year
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The year of the Nobel Prize to get information about (e.g., 1921)
+        example: '1921'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  count: 1
+                  filteredOn:
+                  - firstName
+                  - lastName
+                  - category
+                  - year
+                  nobelPrizes:
+                  - firstName: Albert
+                    lastName: Einstein
+                    born: 1879-03-14
+                    died: 1955-04-18
+                    countryborn: Germany
+                    countrybornCode: DE
+                    born city: Ulm
+                    diedCountry: USA
+                    diedCountryCode: US
+                    diedCity: Princeton NJ
+                    gender: male
+                    year: '1921'
+                    category: Physics
+                    motivation: for his services to Theoretical Physics and especially for his discovery of the law of the photoelectric effect
+                    organization: Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Physik
+                    organizationCity: Berlin
+                    organizationCountry: Germany
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
