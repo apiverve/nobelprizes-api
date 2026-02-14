@@ -12,15 +12,8 @@ public class BasicExample {
         NobelPrizesAPIClient client = new NobelPrizesAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;firstname&quot;, &quot;Albert&quot;);
-        parameters.put(&quot;lastname&quot;, &quot;Einstein&quot;);
-        parameters.put(&quot;category&quot;, &quot;Physics&quot;);
-        parameters.put(&quot;year&quot;, &quot;1921&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
