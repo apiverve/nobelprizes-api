@@ -18,7 +18,7 @@ var query = {
   firstname: "Albert",
   lastname: "Einstein",
   category: "Physics",
-  year: "1921"
+  year: 1921
 };
 
 // Make the API request using callback
