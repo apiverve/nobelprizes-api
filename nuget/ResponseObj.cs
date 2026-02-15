@@ -75,7 +75,6 @@ namespace APIVerve.API.NobelPrizes
         public string Gender { get; set; }
 
         [JsonProperty("year")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Year { get; set; }
 
         [JsonProperty("category")]
