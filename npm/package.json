@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/nobelprizes",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Nobel Prizes is a simple tool for getting information on Nobel Prizes. It returns information on various Nobel Prizes.",
   "main": "index.js",
   "types": "index.d.ts",
