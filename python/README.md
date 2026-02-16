@@ -44,7 +44,12 @@ from apiverve_nobelprizes.apiClient import NobelprizesAPIClient
 # Initialize the client with your APIVerve API key
 api = NobelprizesAPIClient("[YOUR_API_KEY]")
 
-query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
 
 try:
     # Make the API call
@@ -82,7 +87,12 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
 ```
 
 ###### Simple Request
@@ -147,7 +157,12 @@ from apiverve_nobelprizes.apiClient import NobelprizesAPIClient, NobelprizesAPIC
 
 api = NobelprizesAPIClient("[YOUR_API_KEY]")
 
-query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
 
 try:
     result = api.execute(query)
@@ -168,7 +183,12 @@ from apiverve_nobelprizes.apiClient import NobelprizesAPIClient, NobelprizesAPIC
 
 api = NobelprizesAPIClient("[YOUR_API_KEY]")
 
-query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
 
 try:
     result = api.execute(query)
@@ -202,7 +222,12 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_nobelprizes.apiClient import NobelprizesAPIClient, NobelprizesAPIClientError
 
-query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
 
 # Using context manager ensures proper cleanup
 with NobelprizesAPIClient("[YOUR_API_KEY]") as api:
@@ -228,7 +253,12 @@ from apiverve_nobelprizes.apiClient import NobelprizesAPIClient
 # Enable debug mode
 api = NobelprizesAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -243,8 +273,14 @@ from apiverve_nobelprizes.apiClient import NobelprizesAPIClient
 
 api = NobelprizesAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "firstname": "Albert",
+    "lastname": "Einstein",
+    "category": "Physics",
+    "year": 1921
+}
+
 try:
-    query = { "firstname": "Albert", "lastname": "Einstein", "category": "Physics", "year": 1921 }
     result = api.execute(query)
     print(result)
 finally:
