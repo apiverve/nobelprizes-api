@@ -17,11 +17,14 @@ def call_nobelprizes_api():
     Make a GET request to the Nobel Prizes API
     """
     try:
+        # Query parameters
+        params &#x3D; {&#x27;firstname&#x27;: &#x27;Albert&#x27;, &#x27;lastname&#x27;: &#x27;Einstein&#x27;, &#x27;category&#x27;: &#x27;Physics&#x27;}
+
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers, params=params)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
