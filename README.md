@@ -30,7 +30,13 @@ The Nobel Prizes API provides a simple, reliable way to integrate nobel prizes f
 ```javascript
 async function callNobelPrizesAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/nobelprizes', {
+        const params = new URLSearchParams({
+            firstname: 'Albert',
+            lastname: 'Einstein',
+            category: 'Physics'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/nobelprizes?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +56,7 @@ callNobelPrizesAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/nobelprizes?param=value" \
+curl -X GET "https://api.apiverve.com/v1/nobelprizes?firstname=Albert&lastname=Einstein&category=Physics" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +156,7 @@ go get github.com/apiverve/nobelprizes-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +175,7 @@ go get github.com/apiverve/nobelprizes-api/go
 The Nobel Prizes API is commonly used for:
 
 - **Web Applications** - Add nobel prizes features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with nobel prizes capabilities
 - **Data Pipelines** - Process and analyze data at scale
