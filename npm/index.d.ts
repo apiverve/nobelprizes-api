@@ -4,38 +4,30 @@ declare module '@apiverve/nobelprizes' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface nobelprizesResponse {
     status: string;
     error: string | null;
     data: NobelPrizesData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface NobelPrizesData {
-      count:       number;
-      filteredOn:  string[];
-      nobelPrizes: NobelPrize[];
-  }
-  
-  interface NobelPrize {
-      firstName:           string;
-      lastName:            string;
-      born:                Date;
-      died:                Date;
-      countryborn:         string;
-      countrybornCode:     string;
-      bornCity:            string;
-      diedCountry:         string;
-      diedCountryCode:     string;
-      diedCity:            string;
-      gender:              string;
-      year:                string;
-      category:            string;
-      motivation:          string;
-      organization:        string;
-      organizationCity:    string;
-      organizationCountry: string;
+      count:       number | null;
+      filteredOn:  (null | string)[];
+      nobelPrizes: { [key: string]: null | string }[];
   }
 
   export default class nobelprizesWrapper {
