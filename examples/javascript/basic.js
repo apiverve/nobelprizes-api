@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/nobelprizes';
  */
 async function callNobelPrizesAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            firstname: &#x27;Albert&#x27;,
+            lastname: &#x27;Einstein&#x27;,
+            category: &#x27;Physics&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
