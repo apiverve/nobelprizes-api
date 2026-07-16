@@ -32,6 +32,6 @@ namespace APIVerve.API.NobelPrizes
         /// The year of the Nobel Prize to get information about
         /// </summary>
         [JsonProperty("year")]
-        public string Year { get; set; }
+        public int? Year { get; set; }
     }
 }
