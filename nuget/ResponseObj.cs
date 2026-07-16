@@ -25,71 +25,32 @@ namespace APIVerve.API.NobelPrizes
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         [JsonProperty("filteredOn")]
         public string[] FilteredOn { get; set; }
 
         [JsonProperty("nobelPrizes")]
-        public NobelPrize[] NobelPrizes { get; set; }
+        public Dictionary<string, string>[] NobelPrizes { get; set; }
     }
 
-    public partial class NobelPrize
+    public partial class Premium
     {
-        [JsonProperty("firstName")]
-        public string FirstName { get; set; }
+        [JsonProperty("message")]
+        public string Message { get; set; }
 
-        [JsonProperty("lastName")]
-        public string LastName { get; set; }
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
 
-        [JsonProperty("born")]
-        public DateTimeOffset Born { get; set; }
-
-        [JsonProperty("died")]
-        public DateTimeOffset Died { get; set; }
-
-        [JsonProperty("countryborn")]
-        public string Countryborn { get; set; }
-
-        [JsonProperty("countrybornCode")]
-        public string CountrybornCode { get; set; }
-
-        [JsonProperty("born city")]
-        public string BornCity { get; set; }
-
-        [JsonProperty("diedCountry")]
-        public string DiedCountry { get; set; }
-
-        [JsonProperty("diedCountryCode")]
-        public string DiedCountryCode { get; set; }
-
-        [JsonProperty("diedCity")]
-        public string DiedCity { get; set; }
-
-        [JsonProperty("gender")]
-        public string Gender { get; set; }
-
-        [JsonProperty("year")]
-        public long Year { get; set; }
-
-        [JsonProperty("category")]
-        public string Category { get; set; }
-
-        [JsonProperty("motivation")]
-        public string Motivation { get; set; }
-
-        [JsonProperty("organization")]
-        public string Organization { get; set; }
-
-        [JsonProperty("organizationCity")]
-        public string OrganizationCity { get; set; }
-
-        [JsonProperty("organizationCountry")]
-        public string OrganizationCountry { get; set; }
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
