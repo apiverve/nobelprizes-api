@@ -1,13 +1,13 @@
-# [Nobel Prizes API](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Nobel Prizes API](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Nobel Prizes is a simple tool for getting information on Nobel Prizes. It returns information on various Nobel Prizes.
+Nobel Prizes searches laureate records by first name, last name, and award category. Each result includes the winner&#x27;s full name, award year, and category, while paid plans add year filtering, motivations, and biographical details.
 
 The Nobel Prizes API provides a simple, reliable way to integrate nobel prizes functionality into your applications. Built for developers who need production-ready nobel prizes capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -163,7 +163,7 @@ go get github.com/apiverve/nobelprizes-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Nobel Prizes API](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Nobel Prizes API](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/nobelprizes](https://docs.apiverve.com/ref/nobelprizes)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +193,55 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Nobel Prizes API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "count": 1,
+    "filteredOn": [
+      "firstName",
+      "lastName",
+      "category",
+      "year"
+    ],
+    "nobelPrizes": [
+      {
+        "firstName": "Albert",
+        "lastName": "Einstein",
+        "born": "1879-03-14",
+        "died": "1955-04-18",
+        "countryborn": "Germany",
+        "countrybornCode": "DE",
+        "born city": "Ulm",
+        "diedCountry": "USA",
+        "diedCountryCode": "US",
+        "diedCity": "Princeton NJ",
+        "gender": "male",
+        "year": "1921",
+        "category": "Physics",
+        "motivation": "for his services to Theoretical Physics and especially for his discovery of the law of the photoelectric effect",
+        "organization": "Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Physik",
+        "organizationCity": "Berlin",
+        "organizationCountry": "Germany"
+      }
+    ]
+  }
 }
 ```
 
@@ -205,7 +249,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Nobel Prizes API](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Nobel Prizes API](https://apiverve.com/marketplace/nobelprizes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

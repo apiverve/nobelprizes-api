@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Nobel Prizes
   description: >-
-    Nobel Prizes is a simple tool for getting information on Nobel Prizes. It
-    returns information on various Nobel Prizes.
+    Nobel Prizes searches laureate records by first name, last name, and award
+    category. Each result includes the winner's full name, award year, and
+    category, while paid plans add year filtering, motivations, and biographical
+    details.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/nobelprizes:
     get:
-      summary: Get Nobel Prize Information
+      summary: Nobel Prizes
       description: >-
         Nobel Prizes is a simple tool for getting information on Nobel Prizes.
         It returns information on various Nobel Prizes.
