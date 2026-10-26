@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/nobelprizes",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Nobel Prizes searches laureate records by first name, last name, and award category. Each result includes the winner's full name, award year, and category, while paid plans add year filtering, motivations, and biographical details.",
   "main": "index.js",
   "types": "index.d.ts",
